@@ -1,0 +1,10 @@
+body {
+    background-color: cornflowerblue;
+}
+
+#box {
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    border: black;
+}
