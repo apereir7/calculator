@@ -33,20 +33,25 @@ for (i = 0; i < 256; i ++) {
   div[i].style.gridRow;
   div[i].className = `box`;
   div[i].textContent = `${i}`;
+  div[i].style.backgroundColor = "transparent";
+  div[i].id = `div${i}`;
   
 
   document.getElementById("main").appendChild(div[i]);
-
 }
-  document.querySelector(`.box`).addEventListener("mouseover", mouseOver);
-  document.querySelector(`.box`).addEventListener("mouseout", mouseOut);
+
+  document.querySelectorAll(`.box`).forEach(e => e.addEventListener(`mouseout`, mouseOver));
+  document.querySelectorAll(`.box`).forEach(e => e.addEventListener(`mouseout`, mouseOver));
+
 
 
   function mouseOver () {
-    document.querySelector(`.box`).style.backgroundColor = "red";
+    event.target.style.backgroundColor = "red";
   }
+ 
+
   function mouseOut () {
-    document.querySelector(`.box`).style.backgroundColor = "transparent";
+    event.target.style.backgroundColor = "transparent";
   }
 
 </script>
