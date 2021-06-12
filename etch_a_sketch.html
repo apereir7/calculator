@@ -9,8 +9,8 @@
     <style>
       #main {
         display: grid;
-        grid-template-rows: max-content;
-        grid-template-columns: max-content;
+        grid-template-columns: 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px;
+        grid-template-rows: 25px;
         background-color: aqua;
         height: 400px;
         width: 400px;
@@ -25,13 +25,14 @@
   
 <script>
 
-for (i = 0; i < 25; i ++) {
+for (i = 0; i < 256; i ++) {
   const div = [];
   div[i] = document.createElement(`div${i}`);
   div[i].style.width = "25px";
   div[i].style.height = "25px";
-  div[i].style.margin = "black";
+  div[i].style.gridRow;
   div[i].className = `box`;
+  div[i].textContent = `${i}`;
   
 
   document.getElementById("main").appendChild(div[i]);
