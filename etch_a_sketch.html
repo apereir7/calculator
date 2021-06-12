@@ -3,22 +3,50 @@
 
 <head>
   <meta charset="utf-8">
-  <title></title>
+    <title>
+        Etch-a-Sketch
+    </title>
+    <style>
+      #main {
+        display: grid;
+        grid-template-rows: max-content;
+        grid-template-columns: max-content;
+        background-color: aqua;
+        height: 400px;
+        width: 400px;
+        
+      }
+    </style>
   
 </head>
 
 <body>
-<p>
-    Git pushing on branch1
-</p>
+<div id = "main"></div>
   
 <script>
-  
-  
-  
-  
+
+for (i = 0; i < 25; i ++) {
+  const div = [];
+  div[i] = document.createElement(`div${i}`);
+  div[i].style.width = "25px";
+  div[i].style.height = "25px";
+  div[i].style.margin = "black";
+  div[i].className = `box`;
   
 
+  document.getElementById("main").appendChild(div[i]);
+
+}
+  document.querySelector(`.box`).addEventListener("mouseover", mouseOver);
+  document.querySelector(`.box`).addEventListener("mouseout", mouseOut);
+
+
+  function mouseOver () {
+    document.querySelector(`.box`).style.backgroundColor = "red";
+  }
+  function mouseOut () {
+    document.querySelector(`.box`).style.backgroundColor = "transparent";
+  }
 
 </script>
 </body>
