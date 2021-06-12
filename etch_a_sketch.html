@@ -21,25 +21,28 @@
 <div id = "main"></div>
   
 <script>
-  
-let div = document.createElement("div");
-div.style.width = "25px";
-div.style.height = "25px";
-div.className = "box";
 
-document.getElementById("main").appendChild(div);
+for (i = 0; i < 2; i ++) {
+  const div = [];
+  div[i] = document.createElement(`div${i}`);
+  div[i].style.width = "25px";
+  div[i].style.height = "25px";
+  div[i].style.margin = "black";
+  div[i].className = `box`;
 
+  document.getElementById("main").appendChild(div[i]);
 
-document.querySelector(".box").addEventListener("mouseover", mouseOver);
-document.querySelector(".box").addEventListener("mouseout", mouseOut);
-
-
-function mouseOver () {
-  document.querySelector(".box").style.backgroundColor = "red";
 }
-function mouseOut () {
-  document.querySelector(".box").style.backgroundColor = "transparent";
-}
+  document.querySelector(`.box`).addEventListener("mouseover", mouseOver);
+  document.querySelector(`.box`).addEventListener("mouseout", mouseOut);
+
+
+  function mouseOver () {
+    document.querySelector(`.box`).style.backgroundColor = "red";
+  }
+  function mouseOut () {
+    document.querySelector(`.box`).style.backgroundColor = "transparent";
+  }
 
 </script>
 </body>
