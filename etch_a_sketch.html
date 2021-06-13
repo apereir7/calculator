@@ -32,7 +32,7 @@ for (i = 0; i < 256; i ++) {
   div[i].style.height = "25px";
   div[i].style.gridRow;
   div[i].className = `box`;
-  div[i].textContent = `${i}`;
+  div[i].textContent = ``;
   div[i].style.backgroundColor = "transparent";
   div[i].id = `div${i}`;
   
@@ -40,18 +40,18 @@ for (i = 0; i < 256; i ++) {
   document.getElementById("main").appendChild(div[i]);
 }
 
-  document.querySelectorAll(`.box`).forEach(e => e.addEventListener(`mouseout`, mouseOver));
-  document.querySelectorAll(`.box`).forEach(e => e.addEventListener(`mouseout`, mouseOver));
+  document.querySelectorAll(`.box`).forEach(e => e.addEventListener(`mouseover`, mouseOver));
+  document.querySelectorAll(`.box`).forEach(e => e.addEventListener(`mouseout`, mouseOut));
 
 
 
   function mouseOver () {
-    event.target.style.backgroundColor = "red";
+    event.target.style.backgroundColor = "#ff00ff";
   }
  
 
   function mouseOut () {
-    event.target.style.backgroundColor = "transparent";
+    event.target.style.backgroundColor = "#ff99ff";
   }
 
 </script>
