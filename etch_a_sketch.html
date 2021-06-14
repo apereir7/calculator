@@ -26,10 +26,11 @@
   
   <script>
     document.body.onload = createBox;
-    let divAmount = 16;
-    document.getElementById("main").style.gridTemplateColumns = `repeat(${divAmount},1fr)`;
-    document.getElementById("main").style.gridTemplateRows = `repeat(${divAmount},1fr)`;
+    let divAmount = 4;
+    
     function createBox () {
+      document.getElementById("main").style.gridTemplateColumns = `repeat(${divAmount},1fr)`;
+      document.getElementById("main").style.gridTemplateRows = `repeat(${divAmount},1fr)`;
       for (i = 0; i < (Math.pow(divAmount,2)); i ++) {
         const div = [];
         div[i] = document.createElement(`div${i}`);
@@ -44,7 +45,7 @@
       }
     }
   
-    const divs = document.querySelectorAll("div:not(#main)");
+    const divs = document.querySelectorAll("div");
     divs.forEach(selectorFunc);
     function selectorFunc (div) {
       div.addEventListener(`mouseover`, mouseOver);
