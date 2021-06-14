@@ -21,50 +21,58 @@
 </head>
 
 <body>
+  <button>Shake</button>
   <div id = "main"></div>
   
   <script>
-  document.body.onload = createBox;
+    document.body.onload = createBox;
 
-function createBox () {
-  for (i = 0; i < 256; i ++) {
-    const div = [];
-    div[i] = document.createElement(`div${i}`);
-    div[i].style.width = "25px";
-    div[i].style.height = "25px";
-    div[i].style.gridRow;
-    div[i].className = `box`;
-    div[i].textContent = ``;
-    div[i].style.backgroundColor = "transparent";
-    div[i].id = `div${i}`;
+    function createBox () {
+      for (i = 0; i < 256; i ++) {
+        const div = [];
+        div[i] = document.createElement(`div${i}`);
+        div[i].style.width = "25px";
+        div[i].style.height = "25px";
+        div[i].style.gridRow;
+        div[i].className = `box`;
+        div[i].textContent = ``;
+        div[i].style.backgroundColor = "transparent";
+        div[i].id = `div${i}`;
+
+        document.getElementById("main").appendChild(div[i]);
+      }
+    }
   
+    const divs = document.querySelectorAll(`div`);
+    divs.forEach(selectorFunc);
+    function selectorFunc (div) {
+      div.addEventListener(`mouseover`, mouseOver);
+      div.addEventListener(`mouseout`, mouseOut);
+    }
 
-    document.getElementById("main").appendChild(div[i]);
-  }
-}
-  
-const divs = document.querySelectorAll(`div`);
-
-function selectorFunc (div) {
-  div.addEventListener(`mouseover`, mouseOver);
-}
+    
 
 
-divs.forEach(selectorFunc);
-
-
-  function mouseOver () {
-    let mouseOver = event.target.style.backgroundColor = "#ff00ff";
-  }
+    function mouseOver () {
+      let mouseOver = event.target.style.backgroundColor = "#ff00ff";
+    }
  
+    function mouseOut () {
+      let mouseOut = event.target.style.backgroundColor = "#ff99ff";
+    }
 
-  function mouseOut () {
-    let mouseOut = event.target.style.backgroundColor = "#ff99ff";
-  }
-  
+    document.querySelector(`button`).addEventListener(`click`, removeBox);
+
+    function removeBox () {
+      for (i = 0; i < 256; i ++) {
+        const div = [];
+        div[i] = document.getElementById(`div${i}`);
+        document.getElementById(`main`).removeChild(div[i]);
+      }
+    }
 
 
-</script>
+  </script>
 </body>
 
 </html>
