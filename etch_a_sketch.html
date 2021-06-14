@@ -26,7 +26,7 @@
   
   <script>
     document.body.onload = createBox;
-    let divAmount = 70;
+    let divAmount = 16;
     document.getElementById("main").style.gridTemplateColumns = `repeat(${divAmount},1fr)`;
     document.getElementById("main").style.gridTemplateRows = `repeat(${divAmount},1fr)`;
     function createBox () {
@@ -44,11 +44,11 @@
       }
     }
   
-    const divs = document.querySelectorAll(`div:not(main)`);
+    const divs = document.querySelectorAll("div:not(#main)");
     divs.forEach(selectorFunc);
     function selectorFunc (div) {
       div.addEventListener(`mouseover`, mouseOver);
-      div.addEventListener(`mouseout`, mouseOut);
+      
     }
 
     
