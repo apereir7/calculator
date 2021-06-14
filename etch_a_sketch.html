@@ -26,15 +26,14 @@
   
   <script>
     document.body.onload = createBox;
-    let k = 16;
-    document.getElementById("main").style.gridTemplateColumns = `repeat(${k},1fr)`;
-    document.getElementById("main").style.gridTemplateRows = `repeat(${k},1fr)`;
+    let divAmount = 70;
+    document.getElementById("main").style.gridTemplateColumns = `repeat(${divAmount},1fr)`;
+    document.getElementById("main").style.gridTemplateRows = `repeat(${divAmount},1fr)`;
     function createBox () {
-      for (i = 0; i < (Math.pow(k,2)); i ++) {
+      for (i = 0; i < (Math.pow(divAmount,2)); i ++) {
         const div = [];
         div[i] = document.createElement(`div${i}`);
-        div[i].style.width = "25px";
-        div[i].style.height = "25px";
+        
         div[i].style.gridRow;
         div[i].className = `box`;
         div[i].textContent = ``;
@@ -66,13 +65,13 @@
     document.querySelector(`button`).addEventListener(`click`, removeBox);
 
     function removeBox () {
-      for (i = 0; i < (Math.pow(k,2)); i ++) {
+      for (i = 0; i < (Math.pow(divAmount,2)); i ++) {
         const div = [];
         div[i] = document.getElementById(`div${i}`);
         document.getElementById(`main`).removeChild(div[i]);
       }
-      k = prompt(`How many squares per side do you want to make new grid?`);
-      if (k != (null || 100 ) ){
+      divAmount = prompt(`How many squares per side do you want to make new grid?`);
+      if (divAmount != (null || 100 ) ){
         createBox();
       }
     }
