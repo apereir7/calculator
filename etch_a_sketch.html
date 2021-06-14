@@ -24,35 +24,38 @@
 <div id = "main"></div>
   
 <script>
-
-for (i = 0; i < 256; i ++) {
-  const div = [];
-  div[i] = document.createElement(`div${i}`);
-  div[i].style.width = "25px";
-  div[i].style.height = "25px";
-  div[i].style.gridRow;
-  div[i].className = `box`;
-  div[i].textContent = ``;
-  div[i].style.backgroundColor = "transparent";
-  div[i].id = `div${i}`;
+  document.body.onload = createBox;
+function createBox () {
+  for (i = 0; i < 256; i ++) {
+    const div = [];
+    div[i] = document.createElement(`div${i}`);
+    div[i].style.width = "25px";
+    div[i].style.height = "25px";
+    div[i].style.gridRow;
+    div[i].className = `box`;
+    div[i].textContent = ``;
+    div[i].style.backgroundColor = "transparent";
+    div[i].id = `div${i}`;
   
 
-  document.getElementById("main").appendChild(div[i]);
+    document.getElementById("main").appendChild(div[i]);
+  }
 }
-
   document.querySelectorAll(`.box`).forEach(e => e.addEventListener(`mouseover`, mouseOver));
   document.querySelectorAll(`.box`).forEach(e => e.addEventListener(`mouseout`, mouseOut));
 
 
 
   function mouseOver () {
-    event.target.style.backgroundColor = "#ff00ff";
+    let mouseOver = event.target.style.backgroundColor = "#ff00ff";
   }
  
 
   function mouseOut () {
-    event.target.style.backgroundColor = "#ff99ff";
+    let mouseOut = event.target.style.backgroundColor = "#ff99ff";
   }
+  
+
 
 </script>
 </body>
