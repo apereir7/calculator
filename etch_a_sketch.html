@@ -8,7 +8,6 @@
     </title>
     <style>
       #main {
-<<<<<<< HEAD
         display: grid;
         grid-template-columns: 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px;
         grid-template-rows: 25px;
@@ -16,19 +15,12 @@
         height: 400px;
         width: 400px;
         
-=======
-        background-color: aqua;
-        height: 400px;
-        width: 400px;
-        margin: auto;
->>>>>>> main
       }
     </style>
   
 </head>
 
 <body>
-<<<<<<< HEAD
   <button>Shake</button>
   <div id = "main"></div>
   
@@ -78,33 +70,7 @@
         document.getElementById(`main`).removeChild(div[i]);
       }
     }
-=======
-<div id = "main"></div>
-  
-<script>
->>>>>>> main
 
-for (i = 0; i < 2; i ++) {
-  const div = [];
-  div[i] = document.createElement(`div${i}`);
-  div[i].style.width = "25px";
-  div[i].style.height = "25px";
-  div[i].style.margin = "black";
-  div[i].className = `box`;
-
-  document.getElementById("main").appendChild(div[i]);
-
-}
-  document.querySelector(`.box`).addEventListener("mouseover", mouseOver);
-  document.querySelector(`.box`).addEventListener("mouseout", mouseOut);
-
-
-  function mouseOver () {
-    document.querySelector(`.box`).style.backgroundColor = "red";
-  }
-  function mouseOut () {
-    document.querySelector(`.box`).style.backgroundColor = "transparent";
-  }
 
   </script>
 </body>
