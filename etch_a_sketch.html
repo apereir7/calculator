@@ -30,7 +30,7 @@
     document.getElementById("main").style.gridTemplateColumns = `repeat(${k},1fr)`;
     document.getElementById("main").style.gridTemplateRows = `repeat(${k},1fr)`;
     function createBox () {
-      for (i = 0; i < (Math.pow(16,2)); i ++) {
+      for (i = 0; i < (Math.pow(k,2)); i ++) {
         const div = [];
         div[i] = document.createElement(`div${i}`);
         div[i].style.width = "25px";
@@ -45,7 +45,7 @@
       }
     }
   
-    const divs = document.querySelectorAll(`div`);
+    const divs = document.querySelectorAll(`div:not(main)`);
     divs.forEach(selectorFunc);
     function selectorFunc (div) {
       div.addEventListener(`mouseover`, mouseOver);
@@ -66,10 +66,14 @@
     document.querySelector(`button`).addEventListener(`click`, removeBox);
 
     function removeBox () {
-      for (i = 0; i < (Math.pow(16,2)); i ++) {
+      for (i = 0; i < (Math.pow(k,2)); i ++) {
         const div = [];
         div[i] = document.getElementById(`div${i}`);
         document.getElementById(`main`).removeChild(div[i]);
+      }
+      k = prompt(`How many squares per side do you want to make new grid?`);
+      if (k != (null || 100 ) ){
+        createBox();
       }
     }
 
