@@ -21,10 +21,11 @@
 </head>
 
 <body>
-<div id = "main"></div>
+  <div id = "main"></div>
   
-<script>
+  <script>
   document.body.onload = createBox;
+
 function createBox () {
   for (i = 0; i < 256; i ++) {
     const div = [];
@@ -41,9 +42,15 @@ function createBox () {
     document.getElementById("main").appendChild(div[i]);
   }
 }
-  document.querySelectorAll(`.box`).forEach(e => e.addEventListener(`mouseover`, mouseOver));
-  document.querySelectorAll(`.box`).forEach(e => e.addEventListener(`mouseout`, mouseOut));
+  
+const divs = document.querySelectorAll(`div`);
 
+function selectorFunc (div) {
+  div.addEventListener(`mouseover`, mouseOver);
+}
+
+
+divs.forEach(selectorFunc);
 
 
   function mouseOver () {
