@@ -26,7 +26,7 @@
   
   <script>
     document.body.onload = createBox;
-    let divAmount = 4;
+    let divAmount = 99;
     
     function createBox () {
       document.getElementById("main").style.gridTemplateColumns = `repeat(${divAmount},1fr)`;
@@ -56,7 +56,9 @@
 
 
     function mouseOver () {
-      let mouseOver = event.target.style.backgroundColor = "#ff00ff";
+      if (event.target.id != "main") {
+        let mouseOver = event.target.style.backgroundColor = "#ff00ff";
+      }
     }
  
     function mouseOut () {
